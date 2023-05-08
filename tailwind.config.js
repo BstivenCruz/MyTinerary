@@ -11,7 +11,9 @@ module.exports = {
         botonR : "#E92C7C",
         fondoM : "#FADAFF",
       },
-     
+      fontFamily: {
+          sans: "Braah One"
+        },
 
 
 
@@ -19,4 +21,5 @@ module.exports = {
   },
   variants: {},
   plugins: []
- }
+}
+

@@ -6,7 +6,7 @@ export default function Welcome() {
     <div className="flex flex-col items-center font-semibold mt-3 gap-2 w-screen py-5 md:flex-row md:justify-center md:items-center">
       <h1 className=" md:hidden font-sans2 text-4xl text-black">Welcome!</h1>
       <h4 className="  md:hidden font-snas2 font-normal text-textos">
-        Sing in or creat a new account
+        Sing in or create a new account
       </h4>
       <div className=" hidden md:flex md:flex-col md:justify-between gap-5 md:w-[40%]">
         <h2 className="font-sans2 text-4xl  font-semibold mb-10">

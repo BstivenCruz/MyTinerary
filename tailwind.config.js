@@ -17,6 +17,9 @@ module.exports = {
         sans: "Braah One ,sans",
         sans2: "Inter ,sans-serif"
       },
+      backgroundImage:{
+        fondo:"url('/assets/fondo.png')"
+      }
     },
   },
   variants: {},

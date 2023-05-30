@@ -18,13 +18,13 @@ export default function Welcome() {
           your next trip has never been easier.
         </p>
         <div className="w-1/3">
-          <Button text="View More" />
+          <Button to='/signin' text="Sign in" />
         </div>
       </div>
       <img className=" md:w-[40%] h-[80%]" src={home} />
-      <div className="w-screen sm:w-1/2 flex flex-col gap-3 items-center justify-center md:hidden">
-        <Button text="View More" />
-        <Button text="No account yet? Sing up" />
+      <div className="w-[80%] sm:w-1/2 flex flex-col gap-3 items-center justify-center md:hidden">
+        <Button to='/signin'  text="tienes cuenta? Sign in" />
+        <Button to='/signup' text="No account yet? Sing up" />
       </div>
     </div>
   );

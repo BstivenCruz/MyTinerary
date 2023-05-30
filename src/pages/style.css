@@ -1,37 +1,14 @@
-/*   form {
-    border: #ff8ea8 solid 1px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 65%;
-    width: 60%;
-    padding: 2rem;
-  } */
-
-.control {
-  outline: none;
-  width: 80%;
-  height: 56px;
-  padding: 0 10px;
-  color: inherit;
-  text-align: left;
-  font-size: inherit;
-}
-
 .control::placeholder {
   text-transform: capitalize;
-  --tw-text-opacity: 0.8;
+  --tw-text-opacity: 0.3;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .bars {
-  margin: 8px 0;
+  margin: -25px 0;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
-  gap: 8px;
   width: 80%;
   height: 6px;
   border-radius: 3px;
@@ -58,9 +35,9 @@
 }
 
 .strength {
-  gap: 2;
+  margin-top: 25px;
   height: 10px;
   text-transform: capitalize;
-  color: #E92C7C;
+  color: #e92c7c;
   font-size: 13px;
 }

@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link as Achor } from "react-router-dom";
-import Button from "./Button";
 
 export default function Nav() {
   return (
@@ -18,12 +17,9 @@ export default function Nav() {
           />
         </div>
         <div className="hidden md:flex w-1/3 gap-4 justify-between items-center">
-          <div className="w-1/2 flex justify-between  mt-2 md:text-white">
+          <div className="w-1/2 flex justify-between  mt-2 ">
             <Achor>Home</Achor>
             <Achor>Cities</Achor>
-          </div>
-          <div className=" w-1/3 ">
-            <Button  to='/signup' text="Login" />
           </div>
         </div>
       </div>

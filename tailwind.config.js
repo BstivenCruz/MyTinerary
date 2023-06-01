@@ -10,12 +10,12 @@ module.exports = {
       colors: {
         botonR: "#E92C7C",
         fondoM: "#FADAFF",
-        textos : "#7C7C7C",
-        textos1 : "#1C1C1C" 
+        textos: "#7C7C7C",
+        textos1: "#1C1C1C",
       },
       fontFamily: {
         sans: "Braah One ,sans",
-        sans2: "Inter ,sans-serif"
+        sans2: "Inter ,sans-serif",
       },
     },
   },

@@ -12,7 +12,6 @@ const { signin } = usersActions;
 
 export default function Signin() {
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
   const email = useRef("");
   const password = useRef("");
@@ -22,10 +21,14 @@ export default function Signin() {
       email: email?.current?.value,
       password: password.current?.value,
     };
-    let res = await dispatch(signin(data));
-    if (res.payload.payload.success !== false) {
-      navigate("/");
+    if (usersActions.logged) {
+      console.log("first");
+    } else {
+      await dispatch(signin(data));
     }
+    /* if (res.payload.payload.success !== false) {
+      navigate("/");
+    } */
   };
   return (
     <div className=" items-center  md:flex  h-[100vh] ">

@@ -26,7 +26,7 @@ const signup = createAsyncThunk("signup", async (data) => {
 const signin = createAsyncThunk("signin", async (data) => {
   try {
     let res = await axios.post(`http://localhost:8080/users/signin`, data);
-    toast.success(`🦄 ${res.data.response.user.message}  ${res.data.response.user.email}`, {
+    toast.success(`🦄 ${res.data.response.msg}  ${res.data.response.user.email}`, {
       position: "bottom-left",
       autoClose: 1500,
       theme: "colored",

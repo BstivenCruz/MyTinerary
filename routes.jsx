@@ -3,6 +3,7 @@ import Layouts from "./src/layouts/layouts";
 import Welcome from "./src/pages/welcome";
 import Signin from "./src/pages/signin";
 import Signup from "./src/pages/signup";
+import Cities from "./src/pages/cities";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/cities",
+        element: <Cities />,
       },
     ],
   },

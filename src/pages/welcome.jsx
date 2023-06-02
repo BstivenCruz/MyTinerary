@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import home from "../assets/home.svg";
 import Button from "../components/Button";
+import { useDispatch, useSelector } from "react-redux";
+import citiesActions from "../redux/actions/cityActions";
+const { city } = citiesActions;
 
 export default function Welcome() {
+  const dispatch = useDispatch();
+  const cities = useSelector((store) => store?.reducerCity);
+  useEffect(() => {
+    if (cities.length <= 0) {
+      dispatch(city());
+    }
+  }, []);
   return (
     <div className="flex flex-col items-center font-semibold mt-3 gap-2 w-screen py-5 md:flex-row md:justify-center md:items-center">
       <h1 className=" md:hidden font-sans2 text-4xl text-black">Welcome!</h1>
@@ -18,13 +29,13 @@ export default function Welcome() {
           your next trip has never been easier.
         </p>
         <div className="w-1/3">
-          <Button to='/signin' text="Sign in" />
+          <Button to="/cities" text="Cities" />
         </div>
       </div>
       <img className=" md:w-[40%] h-[80%]" src={home} />
       <div className="w-[80%] sm:w-1/2 flex flex-col gap-3 items-center justify-center md:hidden">
-        <Button to='/signin'  text="tienes cuenta? Sign in" />
-        <Button to='/signup' text="No account yet? Sing up" />
+        <Button to="/cities" text="Cities" />
+        <Button to="/signup" text="No account yet? Sing up" />
       </div>
     </div>
   );

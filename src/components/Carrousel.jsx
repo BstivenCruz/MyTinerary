@@ -5,14 +5,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Carrousel({ img }) {
+export default function Carrousel({ img, photo, setPhoto }) {
+ 
+ 
+  const clickRigth = () => {
+    setPhoto(photo + 1);
+  };
+  const clickLeft = () => {
+    setPhoto(photo - 1);
+  };
+
   return (
-    <div className="flex relative w-full h-[50vh] items-center px-3 justify-between z-0">
+    <div className="flex relative w-full shadow shadow-botonR h-[50vh] items-center px-3 justify-between z-0">
       <FontAwesomeIcon
         icon={faCircleArrowLeft}
         style={{ color: "#E92C7C" }}
         className=" z-10"
-        onClick={() => console.log("izquierda")}
+        onClick={clickLeft}
       />
       <img
         src={img}
@@ -22,7 +31,7 @@ export default function Carrousel({ img }) {
         icon={faCircleArrowRight}
         style={{ color: "#E92C7C" }}
         className=" z-10"
-        onClick={() => console.log("derecha")}
+        onClick={clickRigth}
       />
     </div>
   );

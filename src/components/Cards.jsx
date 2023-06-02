@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faShare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import img from "../assets/Review.png";
-export default function Cards() {
+
+export default function Cards({ city }) {
   const [color, setColor] = useState("#454545");
   const like = () => {
     if (color === "#454545") {
@@ -14,13 +15,17 @@ export default function Cards() {
   };
 
   return (
-    <div className="w-screen p-5 ">
-      <div className="h-[30vh] w-full border border-red-700 rounded-2xl overflow-hidden  ">
-        <img src={img} className="h-[60%] w-full object-cover object-center" />
+    <div className="  md:w-1/3 p-3 ">
+      <div className="h-[35vh] shadow-md shadow-botonR w-full  rounded-2xl overflow-hidden  ">
+        <img
+          src={city?.photo}
+          className="h-[60%] w-full object-cover object-center"
+        />
         <div className="border h-[40%] flex justify-between py-2 px-4">
           <div>
-            <p>nombre</p>
-            <p className=" font-sans2">detalles</p>
+            <p>{city.name}</p>
+            <p className=" font-sans2 capitalize">Pais : {city.pais} </p>
+            <p className=" font-sans2 w-full">Population:{city.population} </p>
           </div>
           <div className="flex flex-col justify-between  w-1/2 h-full">
             <div className="h-1/2">
@@ -32,11 +37,7 @@ export default function Cards() {
                 style={{ color: `${color}` }}
                 onClick={like}
               />
-              <FontAwesomeIcon
-                icon={faShare}
-                style={{ color: `${color}` }}
-                onClick={like}
-              />
+              <FontAwesomeIcon icon={faShare} />
             </div>
           </div>
         </div>

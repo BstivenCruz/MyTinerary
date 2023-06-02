@@ -2,8 +2,10 @@ import { createReducer } from "@reduxjs/toolkit";
 
 import usersActions from "../actions/usersActions";
 const { signup , signin } = usersActions;
+
 const initialState = ''
-const reducer = createReducer(initialState, (builder) => {
+
+const reducerUser = createReducer(initialState, (builder) => {
   builder.addCase(signup.fulfilled , (state, actions) => {
     return {
       ...state,
@@ -21,4 +23,4 @@ const reducer = createReducer(initialState, (builder) => {
   });
 });
 
-export default reducer;
+export default reducerUser;

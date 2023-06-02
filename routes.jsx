@@ -4,6 +4,7 @@ import Welcome from "./src/pages/welcome";
 import Signin from "./src/pages/signin";
 import Signup from "./src/pages/signup";
 import Cities from "./src/pages/cities";
+import Detail from "./src/pages/detail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/cities",
         element: <Cities />,
+      },
+      {
+        path: "/detail/:id",
+        element: <Detail />,
       },
     ],
   },

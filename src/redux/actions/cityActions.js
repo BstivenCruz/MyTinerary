@@ -5,8 +5,20 @@ const city = createAsyncThunk("cities", async () => {
   try {
     let res = await axios.get(`http://localhost:8080/cities`);
     return {
-      payload : res.data.response
-    }
+      payload: res.data.response,
+    };
+  } catch (error) {
+    return {
+      payload: error.response.data,
+    };
+  }
+});
+const places = createAsyncThunk("oneCity", async () => {
+  try {
+    let res = await axios.get(`http://localhost:8080/places`);
+    return {
+      payload: res.data.response,
+    };
   } catch (error) {
     return {
       payload: error.response.data,
@@ -14,5 +26,5 @@ const city = createAsyncThunk("cities", async () => {
   }
 });
 
-const citiesActions = { city };
+const citiesActions = { city, places };
 export default citiesActions;

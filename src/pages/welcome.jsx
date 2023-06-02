@@ -3,14 +3,18 @@ import home from "../assets/home.svg";
 import Button from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../redux/actions/cityActions";
-const { city } = citiesActions;
+const { city, places } = citiesActions;
 
 export default function Welcome() {
   const dispatch = useDispatch();
   const cities = useSelector((store) => store?.reducerCity);
+
   useEffect(() => {
     if (cities.length <= 0) {
       dispatch(city());
+    }
+    if (!cities?.place) {
+      dispatch(places());
     }
   }, []);
   return (

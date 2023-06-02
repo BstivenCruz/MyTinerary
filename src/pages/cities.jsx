@@ -4,8 +4,10 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Cities() {
+  const navigate = useNavigate();
   const { cities } = useSelector((store) => store?.reducerCity?.cities);
   const [photo, setPhoto] = useState(24);
   useEffect(() => {
@@ -20,6 +22,10 @@ export default function Cities() {
   } else if (photo < 0) {
     setPhoto(cities.length - 1);
   }
+
+  const handlerClick = (id) => {
+    navigate(`/detail/${id}`);
+  };
 
   return (
     <>
@@ -44,7 +50,7 @@ export default function Cities() {
         </label>
         <div className=" w-full sm:flex sm:flex-row p-5 flex-wrap">
           {cities.map((city) => (
-            <Cards key={city.name} city={city} />
+            <Cards key={city.name} city={city} onclick={handlerClick} />
           ))}
         </div>
       </div>

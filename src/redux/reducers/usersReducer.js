@@ -14,7 +14,6 @@ const reducerUser = createReducer(initialState, (builder) => {
 
   });
   builder.addCase(signin.fulfilled , (state, actions) => {
-    console.log(actions.payload.payload)
     return {
       ...state,
       user: actions.payload.payload ,

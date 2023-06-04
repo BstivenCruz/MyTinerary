@@ -1,4 +1,4 @@
-import Carrousel from "../components/carrousel";
+import Carrousel from "../components/Carrousel";
 import Cards from "../components/Cards";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

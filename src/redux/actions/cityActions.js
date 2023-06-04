@@ -1,9 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const url = import.meta.env.VITE_REACT_APP_API;
 
 const city = createAsyncThunk("cities", async () => {
   try {
-    let res = await axios.get(`http://localhost:8080/cities`);
+    let res = await axios.get(`${url}/cities`);
     return {
       payload: res.data.response,
     };
@@ -15,7 +16,7 @@ const city = createAsyncThunk("cities", async () => {
 });
 const places = createAsyncThunk("oneCity", async () => {
   try {
-    let res = await axios.get(`http://localhost:8080/places`);
+    let res = await axios.get(`${url}/places`);
     return {
       payload: res.data.response,
     };

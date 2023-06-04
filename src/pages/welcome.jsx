@@ -1,6 +1,7 @@
-import { useEffect } from "react";
 import home from "../assets/home.svg";
 import Button from "../components/Button";
+import Carrousel from "../components/Carrousel";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import citiesActions from "../redux/actions/cityActions";
 const { city, places } = citiesActions;
@@ -8,7 +9,6 @@ const { city, places } = citiesActions;
 export default function Welcome() {
   const dispatch = useDispatch();
   const cities = useSelector((store) => store?.reducerCity);
-
   useEffect(() => {
     if (cities.length <= 0) {
       dispatch(city());
@@ -17,6 +17,20 @@ export default function Welcome() {
       dispatch(places());
     }
   }, []);
+  const [photo, setPhoto] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhoto((photo) => photo + 1);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (photo > 5) {
+    setPhoto(0);
+  } else if (photo < 0) {
+    setPhoto(5);
+  }
+
   return (
     <div className="flex flex-col items-center font-semibold mt-3 gap-2 w-screen py-5 md:flex-row md:justify-center md:items-center">
       <h1 className=" md:hidden font-sans2 text-4xl text-black">Welcome!</h1>
@@ -41,6 +55,11 @@ export default function Welcome() {
         <Button to="/cities" text="Cities" />
         <Button to="/signup" text="No account yet? Sing up" />
       </div>
+      <Carrousel
+        img={cities?.cities?.cities[photo]?.photo}
+        setPhoto={setPhoto}
+        photo={photo}
+      />
     </div>
   );
 }

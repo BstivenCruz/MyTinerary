@@ -5,7 +5,7 @@ import { Link as Achor } from "react-router-dom";
 export default function Nav() {
   return (
     <>
-      <div className=" flex z-40 items-center md:fixed top-0 w-screen justify-between h-[8vh] px-3   ">
+      <div className=" flex z-40 items-center  top-0 w-screen justify-between h-[8vh] px-3   ">
         <h1 className=" flex mt-2 text-3xl font-sans text-black">
           My Tinerary
         </h1>

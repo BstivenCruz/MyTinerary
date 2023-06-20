@@ -53,7 +53,7 @@ export default function Welcome() {
       <img className=" md:w-[40%] h-[80%]" src={home} />
       <div className="w-[80%] sm:w-1/2 flex flex-col gap-3 items-center justify-center md:hidden">
         <Button to="/cities" text="Cities" />
-        <Button to="/signup" text="No account yet? Sing up" />
+        <Button to="/signup" text="No account yet? Sign up" />
       </div>
       <Carrousel
         img={cities?.cities?.cities[photo]?.photo}
